@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         // --- Sistem Başlatma ---
         Library library = new Library();
-        Librarian librarian = new Librarian("Ahmet Yılmaz", "12345");
+        Librarian librarian = new Librarian("Beyza Gürsoy", "12345");
         Scanner scanner = new Scanner(System.in);
 
         // --- Giriş Paneli ---
@@ -22,10 +22,10 @@ public class Main {
 
         if (inputName.equalsIgnoreCase(librarian.getName()) && inputPass.equals(librarian.getPassword())) {
             System.out.println("\nGiriş Başarılı! Hoş geldin, " + librarian.getName());
-            librarian.whoYouAre(); // Kim olduğunu ekrana basar
+            librarian.whoYouAre();
         } else {
             System.out.println("Hata: Geçersiz kullanıcı adı veya şifre! Sistem kapatılıyor.");
-            return; // Programı sonlandırır
+            return;
         }
 
         // --- Örnek Başlangıç Verileri ---
@@ -57,7 +57,7 @@ public class Main {
             System.out.print("Seçiminiz: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Buffer temizleme
+            scanner.nextLine();
 
             switch (choice) {
                 case 1: // Kitap Ekle
@@ -125,9 +125,9 @@ public class Main {
                     Book bToLend = library.searchBook(scanner.nextInt());
                     if (bToLend != null) {
                         librarian.issueBook(studentMember, bToLend);
-                        if (!bToLend.isStatus()) { // Kütüphaneci onayladıysa
+                        if (!bToLend.isStatus()) { 
                             reader.borrowBook(bToLend);
-                            librarian.createBill(reader, bToLend); // Fatura kesimi
+                            librarian.createBill(reader, bToLend);
                         }
                     }
                     break;
@@ -137,7 +137,7 @@ public class Main {
                     Book bToReturn = library.searchBook(scanner.nextInt());
                     if (bToReturn != null) {
                         librarian.processReturn(reader, bToReturn, library);
-                        studentMember.decBookIssued(); // Limit geri açıldı
+                        studentMember.decBookIssued();
                     }
                     break;
 
