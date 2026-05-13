@@ -1,6 +1,7 @@
-package model;
+package models;
 
 import java.util.Date;
+import java.util.Objects;
 
 public abstract class MemberRecord {
     private int memberID;
@@ -97,5 +98,17 @@ public abstract class MemberRecord {
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNo = phoneNo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        MemberRecord that = (MemberRecord) o;
+        return memberID == that.memberID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(memberID);
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package models;
 
 public abstract class Person {
     private String name;
@@ -19,4 +19,10 @@ public abstract class Person {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

@@ -1,7 +1,7 @@
 package interfaces;
 
-import model.Book;
-import model.Reader;
+import models.Book;
+import models.Reader;
 
 public interface IPayment {
     void createBill(Reader reader, Book book);

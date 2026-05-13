@@ -1,8 +1,8 @@
 package app;
 
-import model.*;
-import service.Librarian;
-import service.Library;
+import models.*;
+import models.Librarian;
+import models.Library;
 import java.util.Scanner;
 import java.util.Date;
 
@@ -125,7 +125,7 @@ public class Main {
                     Book bToLend = library.searchBook(scanner.nextInt());
                     if (bToLend != null) {
                         librarian.issueBook(studentMember, bToLend);
-                        if (!bToLend.isStatus()) { 
+                        if (!bToLend.isStatus()) {
                             reader.borrowBook(bToLend);
                             librarian.createBill(reader, bToLend);
                         }

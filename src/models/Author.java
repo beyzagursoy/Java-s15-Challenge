@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +42,12 @@ public class Author extends Person{
     //Setter
     public void setBooks(List<Book> books){
         this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "books=" + books +
+                '}';
     }
 }

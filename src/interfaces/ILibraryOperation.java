@@ -1,6 +1,6 @@
 package interfaces;
 
-import model.Book;
+import models.Book;
 
 public interface ILibraryOperation {
     void addBook(Book book);

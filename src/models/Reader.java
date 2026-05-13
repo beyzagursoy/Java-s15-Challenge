@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,5 +44,12 @@ public class Reader extends Person{
     //Getter
     public List<Book> getBooks(){
         return books;
+    }
+
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "books=" + books +
+                '}';
     }
 }

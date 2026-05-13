@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import java.util.Date;
 
@@ -12,4 +12,5 @@ public class Faculty extends MemberRecord{
     public void payBill(){
         System.out.println("Fakülte üyesi ödeme işlemi tamamlandı. Kurumsal fatura kesildi.");
     }
+
 }

@@ -1,4 +1,6 @@
-package model;
+package models;
+
+import java.util.Objects;
 
 public abstract class Book {
     private int bookID;
@@ -77,5 +79,22 @@ public abstract class Book {
 
     public void setDateOfPurchase(String dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return bookID == book.bookID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(bookID);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{ID=" + bookID + ", Name='" + name + "'}";
     }
 }

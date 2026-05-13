@@ -1,10 +1,6 @@
-package service;
+package models;
 
 import interfaces.IPayment;
-import model.Book;
-import model.MemberRecord;
-import model.Person;
-import model.Reader;
 
 public class Librarian extends Person implements IPayment {
     private String password;
@@ -77,4 +73,5 @@ public class Librarian extends Person implements IPayment {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
