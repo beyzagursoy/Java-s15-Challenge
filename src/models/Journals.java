@@ -17,4 +17,6 @@ public class Journals extends Book {
         System.out.println("Durum: " + (isStatus() ? "Kütüphanede" : "Ödünç Verildi"));
         System.out.println("---------------------------------");
     }
+
+
 }

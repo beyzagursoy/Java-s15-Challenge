@@ -7,6 +7,7 @@ public abstract class Person {
         this.name = name;
     }
 
+    //abstract metod
     public abstract void whoYouAre();
 
     //Getter

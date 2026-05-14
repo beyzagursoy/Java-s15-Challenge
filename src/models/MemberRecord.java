@@ -24,6 +24,7 @@ public abstract class MemberRecord {
         this.phoneNo = phoneNo;
     }
 
+    //abstract metod
     public abstract void payBill();
 
     public void incBookIssued(){

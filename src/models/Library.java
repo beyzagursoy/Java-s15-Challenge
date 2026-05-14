@@ -5,7 +5,7 @@ import interfaces.ILibraryOperation;
 import java.util.*;
 
 public class Library implements ILibraryOperation {
-    private Map<Integer, Book> booksMap;
+    private Map<Integer, Book> booksMap; //Composition(has-a)
     private Set<Integer> bookIDs;
     private List<Reader> readers;
 
@@ -53,6 +53,7 @@ public class Library implements ILibraryOperation {
         }
     }
 
+    //ödünç verme
     public void lendBook(Reader reader, Book book){
         if(book.isStatus()){
             reader.borrowBook(book);
@@ -94,8 +95,41 @@ public class Library implements ILibraryOperation {
         readers.add(reader);
     }
 
-    public List<Reader> getReaders(){
+    //Getter
+    public Map<Integer, Book> getBooksMap() {
+        return booksMap;
+    }
+
+    public Set<Integer> getBookIDs() {
+        return bookIDs;
+    }
+
+    public List<Reader> getReaders() {
         return readers;
     }
 
+    //Setter
+    public void setBooksMap(Map<Integer, Book> booksMap) {
+        this.booksMap = booksMap;
+    }
+
+    public void setBookIDs(Set<Integer> bookIDs) {
+        this.bookIDs = bookIDs;
+    }
+
+    public void setReaders(List<Reader> readers) {
+        this.readers = readers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Objects.equals(booksMap, library.booksMap) && Objects.equals(bookIDs, library.bookIDs) && Objects.equals(readers, library.readers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(booksMap, bookIDs, readers);
+    }
 }

@@ -143,7 +143,7 @@ public class Main {
 
                 case 11: // Bilgiler
                     studentMember.payBill(); // Polymorphism
-                    reader.showBook(); // Composition
+                    reader.showBook();
                     System.out.println("Aktif Kitap Sayısı: " + studentMember.getNoBooksIssued());
                     System.out.println("Kalan Limit: " + (studentMember.getMaxBookLimit() - studentMember.getNoBooksIssued()));
                     break;

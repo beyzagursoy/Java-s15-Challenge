@@ -2,9 +2,10 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Reader extends Person{
-    private List<Book> books; //Composition
+    private List<Book> books; //Composition(borrows(ödünç alır ilişkisi))
 
     public Reader(String name){
         super(name);
@@ -46,10 +47,27 @@ public class Reader extends Person{
         return books;
     }
 
+    //Setter
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
     @Override
     public String toString() {
         return "Reader{" +
                 "books=" + books +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Reader reader = (Reader) o;
+        return Objects.equals(books, reader.books);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(books);
     }
 }

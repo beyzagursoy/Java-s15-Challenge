@@ -21,6 +21,7 @@ public abstract class Book {
         this.dateOfPurchase = dateOfPurchase;
     }
 
+    //abstract metod
     public abstract void display();
 
     //Getter

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Author extends Person{
-    private List<Book> books;
+    private List<Book> books; //Composition (creates(oluşturur) ilişkisine sahiptir)
 
     public Author(String name){
         super(name);
